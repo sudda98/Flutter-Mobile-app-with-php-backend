@@ -27,7 +27,7 @@ Route::middleware('auth:sanctum')->post('./logout',[AuthController::class, 'logo
 
 
 
-// Courses management - only accessible by instructors
+// Courses management
     Route::middleware('role:instructor')->group(function () {
     Route::post('/courses', [CourseController::class, 'store']);
     Route::put('/courses/{course}', [CourseController::class, 'update']);
