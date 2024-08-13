@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class EnrollmentController extends Controller
 {
     /**
-     * Enroll the authenticated user in a course.
-     */
+     * Enroll user
     public function enroll($id)
     {
         $user = Auth::user();
@@ -24,7 +23,7 @@ class EnrollmentController extends Controller
             return response()->json(['message' => 'You are already enrolled in this course'], 409);
         }
 
-        // Enroll the user in the course
+        // Enroll  user  course
         Enrollment::create([
             'user_id' => $user->id,
             'course_id' => $course->id,
@@ -33,9 +32,7 @@ class EnrollmentController extends Controller
         return response()->json(['message' => 'Enrolled successfully'], 200);
     }
 
-    /**
-     * Unenroll the authenticated user from a course.
-     */
+    
     public function unenroll($id)
     {
         $user = Auth::user();
