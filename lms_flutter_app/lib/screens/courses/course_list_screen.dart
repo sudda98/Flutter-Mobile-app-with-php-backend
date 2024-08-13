@@ -6,8 +6,7 @@ class CourseProvider with ChangeNotifier {
   List<Course> get courses => _courses;
 
   Future<void> fetchCourses() async {
-    // Implement your logic to fetch courses here
-    // For now, let's just simulate some data
+
     await Future.delayed(Duration(seconds: 2));
     _courses = [
       Course(id: '1', title: 'Flutter Basics'),
